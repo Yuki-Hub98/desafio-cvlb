@@ -1,0 +1,9 @@
+# ========================
+# BACKEND - SPRING BOOT
+# ========================
+tarefas-todo-app/target/
+tarefas-todo-app/.idea/
+tarefas-todo-app/*.iml
+tarefas-todo-app/*.log
+tarefas-todo-app/.env
+tarefas-todo-app/.DS_Store

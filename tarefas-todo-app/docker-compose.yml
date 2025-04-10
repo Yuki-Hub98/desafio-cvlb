@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev  #Dockerfile é para produção e Dockerfile.dev é dev
+    container_name: todo-service
+    ports:
+      - "8080:8080" # Altere conforme a porta usada pela sua app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://projeto-db-1:5432/todo
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: B3wFz3hEg0Uu
+    networks:
+      - projeto_default
+    restart: unless-stopped
+
+
+networks:
+  projeto_default:
+    external: true
