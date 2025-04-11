@@ -1,6 +1,7 @@
 package com.gvlb.tarefas_todo_app.configurations.security;
 
 import com.gvlb.tarefas_todo_app.repositories.UserRepository;
+import com.gvlb.tarefas_todo_app.services.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
