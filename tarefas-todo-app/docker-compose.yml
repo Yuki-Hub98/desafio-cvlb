@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.dev  #Dockerfile é para produção e Dockerfile.dev é dev
+      dockerfile: Dockerfile
     container_name: todo-service
     ports:
       - "8080:8080" # Altere conforme a porta usada pela sua app
