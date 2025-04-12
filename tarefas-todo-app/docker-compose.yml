@@ -14,6 +14,16 @@ services:
       - projeto_default
     restart: unless-stopped
 
+  app-test:
+      build:
+        context: .
+        dockerfile: Dockerfile.test
+      container_name: todo-service-test
+      networks:
+        - projeto_default
+      command: mvn test
+      depends_on:
+        - app
 
 networks:
   projeto_default:
