@@ -10,10 +10,9 @@ CREATE TABLE todos (
     titulo VARCHAR(50) NOT NULL,
     status BOOLEAN NOT NULL DEFAULT FALSE,
     importante BOOLEAN NOT NULL DEFAULT FALSE,
-    descricao VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    vencimento DATE,
     user_id BIGINT NOT NULL,
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
