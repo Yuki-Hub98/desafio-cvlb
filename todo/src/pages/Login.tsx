@@ -39,7 +39,7 @@ export const Login = () => {
         className="w-full max-w-md bg-white rounded-2xl shadow-md p-10 border border-green-100 relative overflow-hidden"
       >
         <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
-          {isRegistering ? 'Crie sua conta' : 'Bem-vindo a Todo List'}
+          {isRegistering ? 'Crie sua conta' : 'Bem-vindo a To do List'}
         </h2>
 
         {message && (
@@ -79,9 +79,7 @@ export const Login = () => {
               !isRegistering && message ? 'animate-shake' : ''
             }`}
           >
-            {isRegistering
-              ? 'Já tem conta? Login'
-              : 'Novo aqui? Criar uma conta'}
+            {isRegistering ? 'Já tem conta? Login' : 'Novo aqui? Criar uma conta'}
           </button>
         </div>
         <Button type="submit">{isRegistering ? 'Cadastrar' : 'Entrar'}</Button>
