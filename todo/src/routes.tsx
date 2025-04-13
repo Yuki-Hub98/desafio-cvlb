@@ -1,12 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
+import { Dashboard } from './pages/Dashboard';
 import { Login } from './pages/Login';
-import { Home } from './pages/Home';
+import { AutenticateUserConfig } from './config/autenticateUserConfig';
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
+      <Route
+        path="/dashboard"
+        element={
+          <AutenticateUserConfig>
+            <Dashboard />{' '}
+          </AutenticateUserConfig>
+        }
+      />
     </Routes>
   );
 }
