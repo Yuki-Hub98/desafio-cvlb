@@ -6,5 +6,4 @@ export type Todo = {
   descricao: string;
   createdAt: Date;
   updatedAt: Date;
-  vencimento?: Date;
 };

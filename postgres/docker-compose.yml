@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15.4-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - .docker/postegres:/var/lib/postgresql/data
+      - ./prepare-db.sql:/docker-entrypoint-initdb.d/prepare-db.sql
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  pgadmin:
+    image: dpage/pgadmin4:8.11.0
+    ports:
+      - 5850:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=False
+    depends_on:
+      - db
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+volumes:
+  external-storage:
+    external: true
