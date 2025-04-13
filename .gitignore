@@ -11,12 +11,12 @@ tarefas-todo-app/.DS_Store
 # ========================
 # FRONTEND - VITE + REACT
 # ========================
-tarefas-todo-app/node_modules/
-tarefas-todo-app/dist/
-tarefas-todo-app/.vite/
-tarefas-todo-app/.eslintcache
-tarefas-todo-app/.parcel-cache/
-tarefas-todo-app/.turbo/
-tarefas-todo-app/.DS_Store
-tarefas-todo-app/.env
-tarefas-todo-app/coverage/
+todo/node_modules/
+todo/dist/
+todo/.vite/
+todo/.eslintcache
+todo/.parcel-cache/
+todo/.turbo/
+todo/.DS_Store
+todo/.env
+todo/coverage/
