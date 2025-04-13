@@ -20,3 +20,5 @@ todo/.turbo/
 todo/.DS_Store
 todo/.env
 todo/coverage/
+
+postgres/.env
