@@ -22,3 +22,4 @@ todo/.env
 todo/coverage/
 
 postgres/.env
+postgres/.docker
