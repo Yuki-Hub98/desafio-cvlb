@@ -26,7 +26,7 @@ export const Login = () => {
     },
     onError: () => {
       if (isRegistering) {
-        setMessage('Cadastro falhou. Por favor, tente novamente.');
+        setMessage('Erro ao cadastrar. Por favor, tente novamente com outro usuário.');
       } else {
         setMessage('Usuário ou senha inválidos');
       }
