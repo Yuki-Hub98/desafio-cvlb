@@ -68,7 +68,7 @@ class TodoServiceTest {
         );
     }
 
-    @DisplayName("Deve retornar todos os todos cadastrados")
+    @DisplayName("Deve retornar todos os to do cadastrados")
     void getAllTodos() {
         when(todoRepository.findAll()).thenReturn(List.of(todo));
 
@@ -78,6 +78,24 @@ class TodoServiceTest {
         assertEquals(todo.getTitulo(), result.get(0).getTitulo());
         verify(todoRepository).findAll();
     }
+
+    @Test
+    @DisplayName("Deve retornar to do de um usuario")
+    void getUserTodo(){
+        String username = "usuarioTeste";
+        when(userRepository.findByUsername(username)).thenReturn(user);
+        when(todoRepository.findByUserTodo(user)).thenReturn(List.of(todo));
+
+        List<Todo> todos = todoService.getUserTodo(username);
+
+        assertNotNull(todos);
+        assertEquals(1, todos.size());
+        assertEquals(todo.getTitulo(), todos.get(0).getTitulo());
+
+        verify(userRepository).findByUsername(username);
+        verify(todoRepository).findByUserTodo(user);
+    }
+
 
     @Test
     @DisplayName("Deve criar um novo todo com sucesso")

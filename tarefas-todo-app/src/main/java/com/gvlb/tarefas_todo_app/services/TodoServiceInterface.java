@@ -8,6 +8,8 @@ import java.util.List;
 public interface TodoServiceInterface {
     List<Todo> getAllTodos();
 
+    List<Todo> getUserTodo(String username);
+
     Todo createTodo(TodoRequestTDO todoRequestTDO);
 
     Todo editTodo(TodoRequestTDO todoRequestTDO);
