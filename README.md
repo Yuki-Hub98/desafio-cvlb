@@ -11,6 +11,10 @@ Isso inclui containers Docker, servidores locais ou qualquer outro processo.
 
 Além disso, você precisa ter o **Docker** instalado em sua máquina.
 
+> ⚠️ **Atenção:**  
+> Se você estiver em uma rede com proxy que exige liberação para acessar repositórios (por exemplo, `https://repo.maven.apache.org`), pode haver problemas durante o build.  
+> Nesse caso, recomendamos executar os testes em uma rede sem proxy.
+
 ---
 
 ## 🛠️ Passo a passo para rodar o projeto
