@@ -8,20 +8,11 @@ services:
       dockerfile: Dockerfile
     container_name: todo-service
     ports:
-      - "8080:8080" # Altere conforme a porta usada pela sua app
+      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://desafio-cvlb-db-1:5432/todo
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: B3wFz3hEg0Uu
+      SPRING_DATASOURCE_PASSWORD: # Por favor colocar a mesma senha que colocou no banco postgres
     restart: unless-stopped
     depends_on:
       - db
-
-  app-test:
-    build:
-      context: .
-      dockerfile: Dockerfile.test
-    container_name: todo-service-test
-    command: mvn test
-    depends_on:
-      - app
