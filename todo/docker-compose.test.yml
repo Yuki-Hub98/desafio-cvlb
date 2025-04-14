@@ -1,0 +1,9 @@
+services:
+  vite-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: vite-test-runner
+    volumes:
+      - .:/app
+    command: npm run test
