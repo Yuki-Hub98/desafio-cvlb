@@ -1,9 +1,10 @@
 export type Todo = {
-  id: number;
+  id?: string;
+  username?: string;
   titulo: string;
   status: boolean;
   importante: boolean;
   descricao: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 };
