@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth, CreateUser } from '../services/auth';
 import { LoginData } from '../models/loginData';
-import { useHandleSubmit } from '../hooks/usehandleSubmit';
+import { useHandleSubmit } from '../hooks/useHandleSubmit';
 import { Input } from '../components/input';
 import { Button } from '../components/button';
 
@@ -21,6 +21,7 @@ export const Login = () => {
         navigate('/dashboard');
       } else {
         setMessage('Usuário criado com sucesso');
+        setForm({ username: '', password: '' });
       }
     },
     onError: () => {
@@ -75,14 +76,16 @@ export const Login = () => {
               setIsRegistering(!isRegistering);
               setMessage('');
             }}
-            className={`text-green-600 hover:underline text-sm transition-all ${
+            className={`mb-4 h-10 w-52 rounded-xl bg-black text-green-600 hover:underline text-sm transition-all ${
               !isRegistering && message ? 'animate-shake' : ''
             }`}
           >
             {isRegistering ? 'Já tem conta? Login' : 'Novo aqui? Criar uma conta'}
           </button>
         </div>
-        <Button type="submit">{isRegistering ? 'Cadastrar' : 'Entrar'}</Button>
+        <Button className="w-full bg-black mb-4 h-10" type="submit">
+          {isRegistering ? 'Cadastrar' : 'Entrar'}
+        </Button>
       </form>
     </div>
   );
