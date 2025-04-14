@@ -7,6 +7,8 @@ import com.gvlb.tarefas_todo_app.domains.user.User;
 import com.gvlb.tarefas_todo_app.repositories.TodoRepository;
 import com.gvlb.tarefas_todo_app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +26,12 @@ public class TodoService implements TodoServiceInterface{
     @Override
     public List<Todo> getAllTodos(){
         return todoRepository.findAll();
+    }
+
+    @Override
+    public List<Todo> getUserTodo(String username){
+        User user = userFind(username);
+        return todoRepository.findByUserTodo(user);
     }
 
     @Override

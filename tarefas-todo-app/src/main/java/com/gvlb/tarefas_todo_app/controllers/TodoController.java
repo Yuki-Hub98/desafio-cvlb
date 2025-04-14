@@ -20,6 +20,11 @@ public class TodoController {
         return ResponseEntity.ok(new TodoResponseAllTDO(todoServiceInterface.getAllTodos()));
     }
 
+    @GetMapping("/{username}")
+    public ResponseEntity<TodoResponseAllTDO>  getAllTodoUser(@Valid @PathVariable String username) {
+        return ResponseEntity.ok(new TodoResponseAllTDO(todoServiceInterface.getUserTodo(username)));
+    }
+
     @PostMapping("/create")
     public  ResponseEntity<TodoResponseTDO> createTodo(@Valid @RequestBody  TodoRequestTDO requestTDO){
         return ResponseEntity.ok(new TodoResponseTDO(todoServiceInterface.createTodo(requestTDO)));

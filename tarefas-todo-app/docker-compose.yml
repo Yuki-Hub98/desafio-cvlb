@@ -1,3 +1,6 @@
+include:
+  - ../postgres/docker-compose.yml
+
 services:
   app:
     build:
@@ -7,24 +10,18 @@ services:
     ports:
       - "8080:8080" # Altere conforme a porta usada pela sua app
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://projeto-db-1:5432/todo
+      SPRING_DATASOURCE_URL: jdbc:postgresql://desafio-cvlb-db-1:5432/todo
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: B3wFz3hEg0Uu
-    networks:
-      - projeto_default
     restart: unless-stopped
+    depends_on:
+      - db
 
   app-test:
-      build:
-        context: .
-        dockerfile: Dockerfile.test
-      container_name: todo-service-test
-      networks:
-        - projeto_default
-      command: mvn test
-      depends_on:
-        - app
-
-networks:
-  projeto_default:
-    external: true
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: todo-service-test
+    command: mvn test
+    depends_on:
+      - app

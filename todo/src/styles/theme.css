@@ -1,0 +1,8 @@
+@theme {
+  --color-teste-300: oklch(0.72 0.11 221.19);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+}
+
+.teste {
+  @apply rounded-full px-2 py-1.5 font-sans text-sm/6 font-medium shadow bg-teste-300;
+}

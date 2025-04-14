@@ -1,0 +1,3 @@
+.teste-login {
+  @apply rounded-full px-2 py-1.5 font-sans text-sm/6 font-medium shadow bg-avocado-600;
+}

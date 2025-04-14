@@ -7,3 +7,19 @@ tarefas-todo-app/*.iml
 tarefas-todo-app/*.log
 tarefas-todo-app/.env
 tarefas-todo-app/.DS_Store
+
+# ========================
+# FRONTEND - VITE + REACT
+# ========================
+todo/node_modules/
+todo/dist/
+todo/.vite/
+todo/.eslintcache
+todo/.parcel-cache/
+todo/.turbo/
+todo/.DS_Store
+todo/.env
+todo/coverage/
+
+postgres/.env
+postgres/.docker
